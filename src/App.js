@@ -8,6 +8,9 @@ function App() {
     <div className="App">
       <Post />
       <Test />
+      <Box1 />
+      <Box2 />
+      <Box3 />
     </div>
   );
 }
