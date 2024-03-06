@@ -1,3 +1,3 @@
 export default function () {
-  return <span>3번</span>;
+  return <div className="Box3">3번</div>;
 }
