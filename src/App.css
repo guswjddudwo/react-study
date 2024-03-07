@@ -1,5 +1,6 @@
 .App {
-  width: 500px;
-  height: 300px;
-  background-color: #000;
+  width: 900px;
+  height: 900px;
+  background-color: #cc8fc1;
+  display: flex;
 }
