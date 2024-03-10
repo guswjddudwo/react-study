@@ -1,22 +1,10 @@
-import Test from "./Test";
-import Post from "./Post";
-import Box1 from "./Box1";
-import Box2 from "./Box2";
-import Box3 from "./Box3";
+import SplitBox from "./features/nestedComponent/SplitBox";
 import "./App.css";
-import "./Post.css";
-import "./Box1.css";
-import "./Box2.css";
-import "./Box3.css";
 
 function App() {
   return (
     <div className="App">
-      <Post />
-      <Test />
-      <Box1 />
-      <Box2 />
-      <Box3 />
+      <SplitBox />
     </div>
   );
 }
