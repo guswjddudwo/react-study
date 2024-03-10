@@ -1,0 +1,9 @@
+.boxWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.innerBoxWrapper {
+  display: flex;
+  flex-grow: 1;
+}

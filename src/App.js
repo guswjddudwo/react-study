@@ -1,10 +1,10 @@
-import SplitBox from "./features/nestedComponent/SplitBox";
+import NestedComponent from "./features/NestedComponent/NestedComponent";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <SplitBox />
+      <NestedComponent />
     </div>
   );
 }
