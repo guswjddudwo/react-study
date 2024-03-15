@@ -2,11 +2,7 @@ import NestedComponent from "./features/NestedComponent/NestedComponent";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <NestedComponent />
-    </div>
-  );
+  return <div className="App">{/* <NestedComponent /> */}</div>;
 }
 
 export default App;
