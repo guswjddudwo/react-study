@@ -1,4 +1,5 @@
 import NestedComponent from "./features/NestedComponent/NestedComponent";
+import Nested from "./3-11-NestedComponent/Nested";
 import "./App.css";
 
 function App() {
