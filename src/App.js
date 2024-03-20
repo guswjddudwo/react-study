@@ -3,7 +3,12 @@ import Nested from "./3-11-NestedComponent/Nested";
 import "./App.css";
 
 function App() {
-  return <div className="App">{/* <NestedComponent /> */}</div>;
+  return (
+    <div className="App">
+      {/* <NestedComponent /> */}
+      <Nested />
+    </div>
+  );
 }
 
 export default App;
