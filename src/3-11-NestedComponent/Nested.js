@@ -1,3 +1,4 @@
+import "./Nested.css";
 import Box from "./Box";
 export default function Nested() {
   return (
