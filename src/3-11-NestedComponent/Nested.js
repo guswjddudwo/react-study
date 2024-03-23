@@ -1,6 +1,6 @@
 import "./Nested.css";
 import Box from "./Box";
-export default function Nested({ children, bgColor }) {
+export default function Nested() {
   return (
     <div className="boxWrapper">
       <Box title="box1" bgColor="red" />

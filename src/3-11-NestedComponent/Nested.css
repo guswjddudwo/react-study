@@ -2,3 +2,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.innerBoxwrapper {
+  display: flex;
+  flex-grow: 1;
+}
