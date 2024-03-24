@@ -1,12 +1,25 @@
-import NestedComponent from "./features/NestedComponent/NestedComponent";
-import Nested from "./3-11-NestedComponent/Nested";
+import { Outlet, Link } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
+    // Outlet : 내 자식요소 Router를 보여줄 Component
     <div className="App">
-      {/* <NestedComponent /> */}
-      <Nested />
+      <header className="header">
+        <nav>
+          <ul className="navigation">
+            <li>
+              <Link to="nested"> nested </Link>
+            </li>
+            <li>
+              <Link to="hooks">Hooks </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }

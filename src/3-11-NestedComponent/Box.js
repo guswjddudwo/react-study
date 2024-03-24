@@ -5,7 +5,7 @@ export default function Box({ bgColor, title }) {
     <div className="box" style={{ backgroundColor: bgColor }}>
       <div>{title}</div>
       <div className="innerBoxwrapper">
-        <InnerBox bgColor={"#fff"}>InnerBox1</InnerBox>
+        <InnerBox bgColor={"purple"}>InnerBox1</InnerBox>
         <InnerBox bgColor={"blue"}>InnerBox2</InnerBox>
       </div>
     </div>

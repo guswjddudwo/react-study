@@ -1,0 +1,11 @@
+.header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px #ccc;
+}
+
+.navigation {
+  display: flex;
+  column-gap: 10px;
+}
