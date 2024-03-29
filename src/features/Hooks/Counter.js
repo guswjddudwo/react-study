@@ -26,7 +26,13 @@ export default function Counter() {
   // +,- 외에 곱하기 나누기 기능 추가(2로만 곱하거나 나누면 됨)
   // Router 복습하기
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (count < -10) {
+      setCount(-10); // 0보다 작으면 0으로 설정
+    } else if (count > 10) {
+      setCount(10); // 10보다 크면 10으로 설정
+    }
+  }, [count]); // count가 변경될 때마다 실행
 
   return (
     <div className="counter">
