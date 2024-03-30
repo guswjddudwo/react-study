@@ -23,6 +23,11 @@ export default function Counter() {
     setCount((count) => count * 2);
   };
 
+  const divide = () => {
+    console.log(divide);
+    setCount((count) => count / 2);
+  };
+
   // *과제*
   // 카운터를 이용한 계산
   // 숫자 증가는 10까지만 제한 감소는 -10까지만 제한
@@ -43,13 +48,9 @@ export default function Counter() {
     <div className="counter">
       <button onClick={increase}>+</button>
       <span>{count}</span>
-      <button>-</button>
-      <span>
-        {count}*{} = {}
-      </span>
-      <span>
-        {count}/{} = {}
-      </span>
+      <button onClick={decrease}>-</button>
+      <button onClick={multiply}>x</button>
+      <button onClick={divide}>/</button>
     </div>
   );
 }
