@@ -8,24 +8,27 @@ export default function Counter() {
 
   const increase = () => {
     console.log("increase");
-    setCount((count) => ++count);
+    setCount((count) => {
+      if (count >= 10) {
+        return count;
+      }
+      return ++count;
+    });
     console.log("count", count);
   };
   const decrease = () => {
     console.log("decrease");
 
-    setCount((count) => --count);
+    setCount(count - 1);
     console.log("count", count);
   };
 
   const multiply = () => {
-    console.log(multiply);
-    setCount((count) => count * 2);
+    setCount(count * 2);
   };
 
   const divide = () => {
-    console.log(divide);
-    setCount((count) => count / 2);
+    setCount(count / 2);
   };
 
   // *과제*
@@ -37,13 +40,8 @@ export default function Counter() {
   // [] dependencies 영역에 선언된 state가 변경되면 실행됨
   // useEffect(() => { 변경될 조건 },[ 변경될 값 ]);
 
-  useEffect(() => {
-    if (count < -10) {
-      setCount(-10);
-    } else if (count > 10) {
-      setCount(10);
-    }
-  }, [count]);
+  useEffect(() => {}, []);
+
   return (
     <div className="counter">
       <button onClick={increase}>+</button>
@@ -51,6 +49,7 @@ export default function Counter() {
       <button onClick={decrease}>-</button>
       <button onClick={multiply}>x</button>
       <button onClick={divide}>/</button>
+      {/* <span>{count}</span> */}
     </div>
   );
 }

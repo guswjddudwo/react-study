@@ -13,6 +13,7 @@ import HooksLayout from "./pages/hooks/Hooks";
 import CounterPage from "./pages/hooks/Counter";
 
 import "./index.css";
+import EffectPage from "./pages/hooks/Effect";
 
 // createBrowserRouter : Browser Component를 반환
 // createRouterFromElements : Routes Compoment를 반환
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       <Route path="hooks" element={<HooksLayout />}>
         <Route index element={<CounterPage />} />
         <Route path="counter" element={<CounterPage />} />
+        <Route path="effect" element={<EffectPage />} />
       </Route>
     </Route>
   )
