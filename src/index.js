@@ -10,6 +10,7 @@ import {
 import AppLayout from "./App";
 import Nested from "./pages/Nested";
 import HooksLayout from "./pages/hooks/Hooks";
+import Todo from "./pages/todo/Todo";
 import CounterPage from "./pages/hooks/Counter";
 
 import "./index.css";
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppLayout />}>
       <Route path="nested" element={<Nested />} />
+      <Route path="todo" element={<Todo />} />
       <Route path="hooks" element={<HooksLayout />}>
         <Route index element={<CounterPage />} />
         <Route path="counter" element={<CounterPage />} />
