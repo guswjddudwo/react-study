@@ -13,6 +13,10 @@ export default function Todo() {
   const handleInputChange = (event) => {
     setTodoTitle(event.target.value);
   };
+
+  const handleClickAdd = () => {
+    setTodoList({ title: setTodoTitle });
+  };
   return (
     <div>
       <div
@@ -22,7 +26,7 @@ export default function Todo() {
         }}
       >
         <Input value={todoTitle} onChange={handleInputChange} />
-        <Button>add</Button>
+        <Button onClick={handleClickAdd}>add</Button>
       </div>
       <ul>
         {todoList.map((list) => (
@@ -35,7 +39,7 @@ export default function Todo() {
 
 /**
  * 과제
- * Button 컴포넌트에 onCilck 이벤트 적용
+ * Button 컴포넌트에 onClick 이벤트 적용
  * handleCilckAdd 함수를 만들고 Button을 클릭하면,
  * input에 적용된 title을 todolist에 추가
  */

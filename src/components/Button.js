@@ -1,4 +1,3 @@
-export default function Button({ children, onCilck }) {
-  const event = button((onCilck) => event);
-  return <button>{children}</button>;
+export default function Button({ children, onClick }) {
+  return <button onClick={onClick}>{children}</button>;
 }
