@@ -5,7 +5,7 @@ import InnerBox from "./InnerBox";
 // 컴넌트가 외부에서 주입 받는 속성을 의미
 // 기본적으로 childern 속성은 가지고 있음
 // <Box>이 부분이 childern</Box>
-// function Box(props) {}
+// function Box({props}) {}
 // const props = {children: ... }
 // const
 export default function Box({ bgColor, title }) {

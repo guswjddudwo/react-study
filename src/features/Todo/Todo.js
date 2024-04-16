@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import { Children } from "react";
 
 export default function Todo() {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoList, setTodoList] = useState([
-    { title: "24234" },
-    { title: "dsdff" },
+    { title: "해결" },
+    { title: "할 수 있다..!" },
   ]);
 
   // list = {title: ''}
@@ -15,7 +16,7 @@ export default function Todo() {
   };
 
   const handleClickAdd = () => {
-    setTodoList({ title: setTodoTitle });
+    setTodoList({ title: "" });
   };
   return (
     <div>
