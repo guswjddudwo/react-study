@@ -16,8 +16,10 @@ export default function Todo() {
   };
 
   const handleClickAdd = () => {
-    setTodoList({ title: "" });
+    setTodoList([...todoList, { title: "" }]);
+    setTodoTitle("");
   };
+
   return (
     <div>
       <div
@@ -41,6 +43,6 @@ export default function Todo() {
 /**
  * 과제
  * Button 컴포넌트에 onClick 이벤트 적용
- * handleCilckAdd 함수를 만들고 Button을 클릭하면,
+ * handleClickAdd 함수를 만들고 Button을 클릭하면,
  * input에 적용된 title을 todolist에 추가
  */
