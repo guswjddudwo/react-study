@@ -15,12 +15,16 @@ export default function Todo() {
     setTodoTitle(event.target.value);
   };
 
-  const handleClickAdd = useCallback(() => {
-    setTodoList((todoList) => {
-      title;
-    });
-    setTodoTitle((todoTitle) => {});
-  }, []);
+  const handleClickAdd = () => {
+    if (todoTitle.trim() !== "") {
+      // 입력값이 비어있지 않은지 확인
+      setTodoList((prevTodoList) => [
+        ...prevTodoList, // 이전 할 일 목록을 그대로 유지한 후
+        { title: todoTitle }, // 새로운 할 일 항목을 추가합니다.
+      ]);
+      setTodoTitle(""); // 입력값 초기화
+    }
+  };
 
   return (
     <div>
@@ -34,9 +38,8 @@ export default function Todo() {
         <Button onClick={handleClickAdd}>add</Button>
       </div>
       <ul>
-        {todoList.map((list) => (
-          <li>{list.title}</li>
-        ))}
+        {todoList &&
+          todoList.map((list) => <li key={list.title}>{list.title}</li>)}
       </ul>
     </div>
   );
