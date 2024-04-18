@@ -37,9 +37,11 @@ const Row = function ({ count }) {
     <div style={{ height: "50px", border: "solid 1px #ccc" }}>{count}</div>
   );
 };
-// export를 안하면 외부에서 사용 못함
-// named export - 한 파일에 여러개 선언 가능함
-// 아래 처럼 하면 컴포넌트를 추가 선언할 수 있음
+/** 
+ * export를 안하면 외부에서 사용 못함
+ * named export - 한 파일에 여러개 선언 가능함
+    아래 처럼 하면 컴포넌트를 추가 선언할 수 있음
+*/
 export function Layer({ toggle, count }) {
   // 기본적으로 effect는 mounted(생성)단계에서 1번 동작
   // effect는 여러개 선언 가능하고 의존성 배열이 비어있으면 첫 mounted단계에서만 동작

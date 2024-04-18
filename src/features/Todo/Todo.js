@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { Children } from "react";
@@ -6,8 +6,8 @@ import { Children } from "react";
 export default function Todo() {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoList, setTodoList] = useState([
-    { title: "해결" },
-    { title: "할 수 있다..!" },
+    { title: "공부하기" },
+    { title: "복습하기" },
   ]);
 
   // list = {title: ''}
@@ -15,10 +15,12 @@ export default function Todo() {
     setTodoTitle(event.target.value);
   };
 
-  const handleClickAdd = () => {
-    setTodoList([...todoList, { title: "" }]);
-    setTodoTitle("");
-  };
+  const handleClickAdd = useCallback(() => {
+    setTodoList((todoList) => {
+      title;
+    });
+    setTodoTitle((todoTitle) => {});
+  }, []);
 
   return (
     <div>
