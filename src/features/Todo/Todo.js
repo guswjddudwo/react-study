@@ -16,13 +16,11 @@ export default function Todo() {
   };
 
   const handleClickAdd = () => {
-    if (todoTitle.trim() !== "") {
-      // 입력값이 비어있지 않은지 확인
-      setTodoList((prevTodoList) => [
-        ...prevTodoList, // 이전 할 일 목록을 그대로 유지한 후
-        { title: todoTitle }, // 새로운 할 일 항목을 추가합니다.
-      ]);
-      setTodoTitle(""); // 입력값 초기화
+    if (!todoTitle.trim()) {
+      setTodoList((todoList) => {
+        [...todoList, { title: todoTitle }];
+      });
+      setTodoTitle("");
     }
   };
 
