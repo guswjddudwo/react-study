@@ -23,16 +23,23 @@ export default function Todo() {
     setTodoTitle("");
   };
 
-  const handleClickEdit = (id) => {
+  const handleClickEdit = (id) => () => {
+    /**
+     * readOnly가 false일때 활성화되고 true는 수정 불가
+     * 선택한 것만 수정하고 완료해야함
+     * 수정을 하면 새로 랜더링이 되니까 setTodoList에서 수정하고
+     * 수정된것만 랜더링 하는 방법은?
+     */
     console.log("edit");
+
+    if (!edit)
+      setTodoList((todoList) => {
+        [...todoList, {}];
+      });
   };
   const handleClickDelete = (id) => () => {
     console.log("delete", id);
-    setTodoList((list) => {
-      return list.filter((item) => {
-        return item.id !== id;
-      });
-    });
+    setTodoList((list) => list.filter((item) => item.id !== id));
   };
   return (
     <div>
@@ -69,6 +76,6 @@ export default function Todo() {
 /**
  * 24-04-21 과제
  * todo edti 모드 구현
- * handleClickEdit를 동해 받은 id에 해당하는 input만 readOnly={fals}로 활성화
+ * handleClickEdit를 통해 받은 id에 해당하는 input만 readOnly={fals}로 활성화
  * input에 수정된 값을 입력하고 확인을 누르면 title이 업데이트 되어야함
  */
