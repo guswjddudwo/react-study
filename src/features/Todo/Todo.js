@@ -9,38 +9,39 @@ export default function Todo() {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoList, setTodoList] = useState([]);
 
-  // list = {title: ''}
+  // list = {title: ''} 입력
   const handleInputChange = (event) => {
     setTodoTitle(event.target.value);
   };
 
+  // 항목 추가
   const handleClickAdd = () => {
     const title = todoTitle.trim();
-    if (!title) return;
-    setTodoList((todoList) => {
-      return [...todoList, { title, id: uuidv4() }];
-    });
-    setTodoTitle("");
+    if (title)
+      setTodoList((todoList) => [...todoList, { title, id: uuidv4() }]),
+        setTodoTitle("");
   };
 
   const handleClickEdit = (id) => () => {
     /**
-     * readOnly가 false일때 활성화되고 true는 수정 불가
+     * readOnly가 false일때 활성화되고 true일때 수정 불가
      * 선택한 것만 수정하고 완료해야함
      * 수정을 하면 새로 랜더링이 되니까 setTodoList에서 수정하고
      * 수정된것만 랜더링 하는 방법은?
      */
     console.log("edit");
+    const edit = isEdit;
 
     if (!edit)
-      setTodoList((todoList) => {
-        [...todoList, {}];
-      });
-  };
+      setTodoList((todoList) => todoList.focus((item) => item.id === id));
+  }; // is Edit가 fals가 되면 활성화니까 focus !
+
+  // 삭제
   const handleClickDelete = (id) => () => {
     console.log("delete", id);
     setTodoList((list) => list.filter((item) => item.id !== id));
   };
+
   return (
     <div>
       <div
@@ -57,6 +58,7 @@ export default function Todo() {
           <TodoItem
             key={list.id}
             title={list.title}
+            readOnly={!isEdit}
             onClickEdit={handleClickEdit(list.id)}
             onClickDelete={handleClickDelete(list.id)}
           />
