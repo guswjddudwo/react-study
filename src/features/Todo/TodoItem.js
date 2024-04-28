@@ -3,12 +3,18 @@ export default function TodoItem({
   title,
   onClickEdit,
   onClickDelete,
-  isEdit = false,
+  readOnly = true,
+  onChange,
 }) {
   return (
     <li className="todo-item">
       <div>
-        <input type="text" value={title} readOnly={!isEdit} />
+        <input
+          type="text"
+          value={title}
+          readOnly={readOnly}
+          onChange={onChange}
+        />
       </div>
       <div>
         <button onClick={onClickEdit}>edit</button>
