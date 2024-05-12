@@ -1,3 +1,7 @@
-export default function Input({ value, onChange }) {
-  return <input type="text" value={value} onChange={onChange} />;
-}
+import { forwardRef } from "react";
+
+export const Input = forwardRef(function (props, ref) {
+  return <input {...props} ref={ref} />;
+});
+
+export default Input;

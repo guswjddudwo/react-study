@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
+  Router,
   RouterProvider,
 } from "react-router-dom";
 
@@ -15,6 +16,7 @@ import CounterPage from "./pages/hooks/Counter";
 
 import "./index.css";
 import EffectPage from "./pages/hooks/Effect";
+import SigninPage from "./pages/singnin/Singnin";
 
 // createBrowserRouter : Browser Component를 반환
 // createRouterFromElements : Routes Compoment를 반환
@@ -35,6 +37,7 @@ const router = createBrowserRouter(
         <Route path="counter" element={<CounterPage />} />
         <Route path="effect" element={<EffectPage />} />
       </Route>
+      <Route path="signin" element={<SigninPage />} />
     </Route>
   )
 );
