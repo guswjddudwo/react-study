@@ -10,8 +10,8 @@ export default function Todo() {
   const [todoList, setTodoList] = useState([]);
 
   // list = {title: ''} 입력
-  const handleInputChange = (event) => {
-    setTodoTitle(event.target.value);
+  const handleInputChange = (e) => {
+    setTodoTitle(e.target.value);
   };
 
   // 항목 추가
