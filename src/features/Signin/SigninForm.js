@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export default function SigninForm({ children }) {
-  return <Form>{children}</Form>;
+export default function SigninForm({ children, onSubmit: handleSubmit }) {
+  return <Form onSubmit={handleSubmit}>{children}</Form>;
 }
 
 const Form = styled.form`
