@@ -11,6 +11,14 @@ function SigninContainer() {
     setName(e.target.value);
   }, []);
 
+  const updateEmail = useCallback((e) => {
+    setEmail(e.target.value);
+  });
+
+  const updatePhoneNumber = useCallback((e) => {
+    setPhoneNumber(e.taerget.value);
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
