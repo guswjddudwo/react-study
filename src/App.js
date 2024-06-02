@@ -17,6 +17,9 @@ function App() {
             <li>
               <Link to="signin">signin</Link>
             </li>
+            <li>
+              <Link to="form"> form</Link>
+            </li>
           </ul>
         </nav>
       </header>

@@ -1,39 +1,60 @@
 import { useState, useCallback } from "react";
 import SigninForm from "./SigninForm";
 import TextField from "../../components/TextField";
+import styled from "styled-components";
 
-function SigninContainer() {
+export default function SigninContainer() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const updateName = useCallback((e) => {
-    setName(e.target.value);
+  const updateName = useCallback((event) => {
+    setName(event.target.value);
+  });
+  const updateEmail = useCallback((event) => {
+    setEmail(event.target.value);
+  }, []);
+  const updatePhoneNumber = useCallback((event) => {
+    setPhoneNumber(event.target.value);
   }, []);
 
-  const updateEmail = useCallback((e) => {
-    setEmail(e.target.value);
-  });
+  const handleSubmit = (event) => {
+    event.preventDefault(); //기본 기능을 막음
+    console.log("form evet", event);
 
-  const updatePhoneNumber = useCallback((e) => {
-    setPhoneNumber(e.taerget.value);
-  });
+    // formData의 get 방식을 활용
+    const formData = new FormData(event.target);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    // const parameter = {
+    //   name: formData.get("name"),
+    //   email: formData.get("email"),
+    //   phoneNumber: formData.get("phonenumber"),
+    // };
 
-    const formData = new FormData(e.target);
+    // formData의 entries를 활용
+
+    const entries = Object.fromEntries([...formData.entries()]);
+    console.log("parameter", parameter);
 
     const parameter = {};
   };
 
   return (
     <SigninForm onSubmit={handleSubmit}>
-      <TextField label="이름" name="name" value="neme" onChange={updateName} />
-      <TextField label="이메일" name="  email" value="email" />
-      <TextField label="핸드폰번호" name="phonenumber" value="phonenumber" />
+      <TextField label="이름" name="name" value={name} onChange={updateName} />
+      <TextField
+        label="이메일"
+        name="email"
+        value={email}
+        onChange={updateEmail}
+      />
+      <TextField
+        label="휴대폰번호"
+        name="phonenumber"
+        value={phoneNumber}
+        onChange={updatePhoneNumber}
+      />
+      <button type="submit">submit</button>
     </SigninForm>
   );
 }
-
-export default SigninContainer;

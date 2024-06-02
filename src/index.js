@@ -17,6 +17,7 @@ import CounterPage from "./pages/hooks/Counter";
 import "./index.css";
 import EffectPage from "./pages/hooks/Effect";
 import SigninPage from "./pages/singnin/Singnin";
+import ProductRegisterPage from "./pages/form/ProductRegister";
 
 // createBrowserRouter : Browser Component를 반환
 // createRouterFromElements : Routes Compoment를 반환
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
         <Route path="effect" element={<EffectPage />} />
       </Route>
       <Route path="signin" element={<SigninPage />} />
+      <Route path="form" element={<ProductRegisterPage />} />
     </Route>
   )
 );
