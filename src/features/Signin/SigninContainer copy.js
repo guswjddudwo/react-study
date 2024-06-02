@@ -24,11 +24,11 @@ export default function SigninContainer() {
     // formData의 get 방식을 활용
     const formData = new FormData(event.target);
 
-    //   const parameter = {
-    //     name: formData.get("name"),
-    //     email: formData.get("email"),
-    //     phoneNumber: formData.get("phonenumber"),
-    //   };
+    // const parameter = {
+    //   name: formData.get("name"),
+    //   email: formData.get("email"),
+    //   phoneNumber: formData.get("phonenumber"),
+    // };
 
     // formData의 entries를 활용
 
