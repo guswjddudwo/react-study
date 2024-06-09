@@ -9,31 +9,38 @@ import { ForwardedRef, forwardRef } from "react";
  * 다만, 주입 받는 props가 변경이 일어날때는 변경됨
  */
 const TextField = forwardRef(function (
-  { label, name, value, onChange: handleChange },
+  { label, name, value, onChange: handleChange, errors, ...props },
   ref
 ) {
   return (
-    <TextFieldWapper>
-      <Label htmlFor={name}>{label}</Label>
-      <Input
-        id={name}
-        name={name}
-        value={value}
-        onChange={handleChange}
-        ref={ref}
-      />
-    </TextFieldWapper>
+    <div>
+      <TextFieldWrapper>
+        <Label htmlFor={name}>{label}</Label>
+        <Input
+          id={name}
+          name={name}
+          value={value}
+          onChange={handleChange}
+          ref={ref}
+          {...props}
+        />
+      </TextFieldWrapper>
+      {errors?.[name] && <ErrorText>{errors[name].message}</ErrorText>}
+    </div>
   );
 });
 
 const Label = styled.label`
-  width: 80px;
+  min-width: 80px;
 `;
 
-const TextFieldWapper = styled.div`
+const TextFieldWrapper = styled.div`
   display: flex;
   align-items: center;
   column-gap: 8px;
+`;
+const ErrorText = styled.span`
+  color: red;
 `;
 
 export default memo(TextField);
