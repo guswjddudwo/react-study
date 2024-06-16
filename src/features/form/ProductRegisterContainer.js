@@ -66,7 +66,7 @@ export default function ProductRegisterContainer() {
             label="last name"
             {...register("lastName", {
               required: "error: last name required",
-              pattern: /[A-Za-z]/g,
+              pattern: /[A-Za-z]/g, // 정규식
             })}
             errors={errors}
           />
