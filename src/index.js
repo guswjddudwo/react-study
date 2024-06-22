@@ -20,10 +20,10 @@ import SigninPage from "./pages/singnin/Singnin";
 import ProductRegisterPage from "./pages/form/ProductRegister";
 
 // createBrowserRouter : Browser Component를 반환
-// createRouterFromElements : Routes Compoment를 반환
+// createRouterFromElements : Routes Component를 반환
 // Route
 // path: url 경로
-// element: path 경로에 맞춰 보여줄 Compoment
+// element: path 경로에 맞춰 보여줄 Component
 // RouterProvider에 router옵션에 제공되야지만 동작
 // 슬레시(/) 경로는 root 경로 (도메인에 아무 경로도 안 넣었을 경우)
 // 동일 레벨일 경우에는 path='/ComponentName' 이렇게 하기

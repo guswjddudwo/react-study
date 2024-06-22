@@ -78,12 +78,12 @@ export default function Todo() {
  * 과제
  * Button 컴포넌트에 onClick 이벤트 적용
  * handleClickAdd 함수를 만들고 Button을 클릭하면,
- * input에 적용된 title을 todolist에 추가
+ * input에 적용된 title을 todo list에 추가
  */
 
 /**
  * 24-04-21 과제
- * todo edti 모드 구현
- * handleClickEdit를 통해 받은 id에 해당하는 input만 readOnly={fals}로 활성화
+ * todo edit 모드 구현
+ * handleClickEdit를 통해 받은 id에 해당하는 input만 readOnly={false}로 활성화
  * input에 수정된 값을 입력하고 확인을 누르면 title이 업데이트 되어야함
  */
